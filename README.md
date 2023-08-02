@@ -54,13 +54,15 @@ As can be seen, the performance of the `kernel 2` is always better than it of `k
 ### Run on Linux
 - Clone the code.
 - Build command in terminal.
-    ```bash
+
+```bash
 $ mkdir build
 $ cd build
 $ cmake ..
 $ make
 ```
 - Run the executable file.
+
 ```bash
   ./cuda_sdot
 ```
