@@ -10,7 +10,7 @@ By testing, this GPU-optimized kernel boosts the efficiency of the SDOT operatio
 
 Any discussions are welcome, please send them to yiliuli2006@gmail.com
 
-#Logic
+# Logic
 ### Kernel 0 
 The `kernel 0` is the CuBLAS example kernel for the SDOT calculation. 
 
@@ -51,7 +51,7 @@ As can be seen, the performance of the `kernel 2` is always better than it of `k
 
 # How to run
 
-###Run on Linux
+### Run on Linux
 - Clone the code.
 - Build command in terminal.
     ```bash
@@ -65,7 +65,7 @@ $ make
   ./cuda_sdot
 ```
 
-###Run on Windows
+### Run on Windows
 
 - Clone the code.
 - Build command in terminal.
@@ -81,7 +81,7 @@ $ Open cublas_examples.sln project in Visual Studio and build
 ```
 
 
-##How to use
+## How to use
 - Enter kernel number (0 for CuBLAS kernel).
 ```
 Kernel Number (0 for CuBLAS): 2
