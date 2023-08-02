@@ -50,6 +50,7 @@ As can be seen, the performance of the `kernel 2` is always better than it of `k
 
 
 # How to run
+
 ###Run on Linux
 - Clone the code.
 - Build command in terminal.
@@ -65,6 +66,7 @@ $ make
 ```
 
 ###Run on Windows
+
 - Clone the code.
 - Build command in terminal.
 ```bash
