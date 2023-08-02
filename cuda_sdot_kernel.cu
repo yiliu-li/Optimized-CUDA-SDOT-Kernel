@@ -6,6 +6,7 @@
 #include <cuda_runtime.h>
 #include "cublas_utils.h"
 
+
 using namespace std;
 using data_type = float;
 
@@ -118,7 +119,7 @@ int main(int argc, char *argv[]){
 
     int start_n = 100;
     int step_n = 200;
-    int repeat_n = 20;
+    int repeat_n = 25;
     int end_n = start_n + (repeat_n * step_n);
 
     // Set parameter
@@ -173,7 +174,6 @@ int main(int argc, char *argv[]){
 
         if (kernel_num == 2){
             float isInt = log((float)block_size)/log(4);
-            printf("%f", isInt);
             if (isInt == (float)(int)isInt){
                 //Start timer.
                 cudaEventRecord(start);
@@ -217,8 +217,6 @@ int main(int argc, char *argv[]){
         }
 
 
-
-
         cudaEventSynchronize(start);
         cudaEventSynchronize(end);
         float elapsedtime = 0.0;
@@ -230,12 +228,10 @@ int main(int argc, char *argv[]){
         // Copy the result from device to host.
         cudaMemcpy((void*)C, (void*)d_C, sizeof(float), cudaMemcpyDeviceToHost);
 
-
+        // Print performance
         printf("Time spent: %f ms\n", elapsedtime);
         printf("Performance: %f GFLOPS", flops);
         printf("\n========================\n\n");
-
-
 
         // Release memory on device.
         cudaFree(d_A);
@@ -247,18 +243,7 @@ int main(int argc, char *argv[]){
         free(A);
         free(B);
         free(C);
-        
 
-
-}
-
-
-
-
-
-
-
-
-
+    }
 
 }
