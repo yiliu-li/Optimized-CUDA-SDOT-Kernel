@@ -10,6 +10,29 @@ By testing, this GPU-optimized kernel boosts the efficiency of the SDOT operatio
 
 Any discussions are welcome, please send them to yiliuli2006@gmail.com
 
+#Logic
+### Kernel 1 
+The `kernel 1` uses the traditional sequential reduction. Specifically, after multiplying numbers on each position, this kernel adds up two products at a thread in a time, with stride `Size of Vector / 2`. 
+Shown as below. 
+
+![logic1](figs/kernel1logic.png)
+
+### Kernel 2
+The `kernel 1` uses a optimised sequential reduction. In specific, after multiplying numbers on each position, the `kernel 2` adds up four products at a thread in a time, with stride `Size of Vector / 4`. 
+Shown as graph below. 
+
+![logic1](figs/kernel2logic.png)
+
+In comparison, `kernel 2` requires less data movement, whereas the time of iteration is shortened, more tasks are allocated to the GPU computing unit. As a consequense, enhanced the performance limit.
+
+
+
+# Performance
+The following test result was produced on:
+- GCC Version 4.8.5
+- CentOS Linux 7.9.2009
+- 8 Tesla T4 with CUDA Version 11.4
+### CuBLAS - Kernel 1 
 
 
 
