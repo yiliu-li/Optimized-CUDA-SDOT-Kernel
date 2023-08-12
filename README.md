@@ -1,4 +1,4 @@
-# Optimized-Cuda-SDOT-Kernel-on-NVIDIA-Turing-GPUs
+# Optimized CUDA SDOT Kernel
 An optimized CUDA SDOT(Single Floating-Point DOT Product) kernel on NVIDIA Turing GPUs. Better performance than the cuBLAS kernel.
 ## Description
 
@@ -12,7 +12,7 @@ Any discussions are welcome, please send them to yiliuli2006@gmail.com
 
 # Logic
 ### Kernel 0 
-The `kernel 0` is the CuBLAS example kernel for the SDOT calculation. 
+The `kernel 0` is the cuBLAS example kernel for the SDOT calculation. 
 
 ### Kernel 1 
 The `kernel 1` uses the traditional sequential reduction. Specifically, after multiplying numbers on each position, this kernel adds up two products at a thread in a time, with each stride `Size of Vector / 2`. 
@@ -84,9 +84,9 @@ $ Open cublas_examples.sln project in Visual Studio and build
 
 
 ## How to use
-- Enter kernel number (0 for CuBLAS kernel).
+- Enter kernel number (0 for cuBLAS kernel).
 ```
-Kernel Number (0 for CuBLAS): 2
+Kernel Number (0 for cuBLAS): 2
 ```
 - Enter block-size ( 64 / 256 recommended ).
 ```
